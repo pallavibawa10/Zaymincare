@@ -1,0 +1,1461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zaymin Disability Services | Your Trusted Care Services</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #2ABCAA;
+    --teal-light: #4ECDC4;
+    --teal-dark: #1A9688;
+    --purple: #5B3FA6;
+    --purple-light: #7B5DC8;
+    --navy: #1E1B4B;
+    --navy-light: #2D2A6E;
+    --cream: #F9F7F4;
+    --warm-white: #FFFFFF;
+    --text-dark: #1a1a2e;
+    --text-mid: #4a4a6a;
+    --text-light: #8888aa;
+    --shadow: 0 4px 32px rgba(30,27,75,0.10);
+    --shadow-lg: 0 12px 48px rgba(30,27,75,0.15);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(42,188,170,0.15);
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+    box-shadow: 0 2px 20px rgba(30,27,75,0.07);
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+
+  .nav-logo-mark {
+    width: 48px;
+    height: 52px;
+  }
+
+  .nav-brand {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+  }
+
+  .nav-brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--purple);
+    letter-spacing: 0.04em;
+  }
+
+  .nav-brand-sub {
+    font-size: 0.62rem;
+    font-weight: 500;
+    color: var(--teal-dark);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-top: 2px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+    align-items: center;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: var(--text-mid);
+    letter-spacing: 0.02em;
+    transition: color 0.2s;
+    position: relative;
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -3px; left: 0; right: 0;
+    height: 2px;
+    background: var(--teal);
+    transform: scaleX(0);
+    transition: transform 0.2s;
+    border-radius: 2px;
+  }
+
+  .nav-links a:hover { color: var(--teal-dark); }
+  .nav-links a:hover::after { transform: scaleX(1); }
+
+  .nav-cta {
+    background: var(--teal);
+    color: white !important;
+    padding: 10px 22px;
+    border-radius: 50px;
+    transition: background 0.2s, transform 0.2s !important;
+  }
+
+  .nav-cta::after { display: none !important; }
+  .nav-cta:hover { background: var(--teal-dark) !important; transform: translateY(-1px); }
+
+  /* HAMBURGER */
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 4px;
+  }
+  .hamburger span {
+    width: 24px; height: 2px;
+    background: var(--navy);
+    border-radius: 2px;
+    transition: all 0.3s;
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 72px 5% 0;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #f0faf9 0%, #f9f7f4 50%, #f0eeff 100%);
+  }
+
+  .hero-bg-shape {
+    position: absolute;
+    top: -120px; right: -80px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(42,188,170,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-bg-shape2 {
+    position: absolute;
+    bottom: -100px; left: -80px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(91,63,166,0.09) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .hero-content {
+    padding: 80px 0;
+    position: relative;
+    z-index: 2;
+  }
+
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(42,188,170,0.12);
+    color: var(--teal-dark);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 7px 16px;
+    border-radius: 50px;
+    margin-bottom: 28px;
+    border: 1px solid rgba(42,188,170,0.25);
+  }
+
+  .hero-tag::before {
+    content: '';
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: var(--teal);
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.4rem, 4vw, 3.6rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--navy);
+    margin-bottom: 24px;
+  }
+
+  .hero-title em {
+    font-style: normal;
+    color: var(--teal-dark);
+  }
+
+  .hero-desc {
+    font-size: 1.05rem;
+    line-height: 1.75;
+    color: var(--text-mid);
+    max-width: 480px;
+    margin-bottom: 40px;
+    font-weight: 300;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--teal);
+    color: white;
+    padding: 14px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.02em;
+    transition: all 0.25s;
+    box-shadow: 0 6px 24px rgba(42,188,170,0.35);
+  }
+
+  .btn-primary:hover {
+    background: var(--teal-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 32px rgba(42,188,170,0.4);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--purple);
+    padding: 14px 30px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border: 2px solid var(--purple);
+    transition: all 0.25s;
+    letter-spacing: 0.02em;
+  }
+
+  .btn-secondary:hover {
+    background: var(--purple);
+    color: white;
+    transform: translateY(-2px);
+  }
+
+  .hero-stats {
+    display: flex;
+    gap: 36px;
+    margin-top: 52px;
+    padding-top: 36px;
+    border-top: 1px solid rgba(30,27,75,0.08);
+  }
+
+  .hero-stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--purple);
+    line-height: 1;
+  }
+
+  .hero-stat-label {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    font-weight: 500;
+    margin-top: 4px;
+    letter-spacing: 0.02em;
+  }
+
+  .hero-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px 0;
+  }
+
+  .hero-card-main {
+    background: white;
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: var(--shadow-lg);
+    max-width: 340px;
+    position: relative;
+    z-index: 2;
+    animation: floatCard 6s ease-in-out infinite;
+  }
+
+  @keyframes floatCard {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
+
+  .hero-card-icon {
+    width: 56px; height: 56px;
+    background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .hero-card-icon svg { width: 28px; height: 28px; }
+
+  .hero-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 10px;
+  }
+
+  .hero-card-text {
+    font-size: 0.88rem;
+    color: var(--text-mid);
+    line-height: 1.6;
+  }
+
+  .hero-card-pill {
+    display: inline-block;
+    background: rgba(42,188,170,0.1);
+    color: var(--teal-dark);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 50px;
+    margin-top: 16px;
+  }
+
+  .hero-card-float {
+    position: absolute;
+    background: white;
+    border-radius: 16px;
+    padding: 16px 20px;
+    box-shadow: var(--shadow);
+    animation: floatCard2 7s ease-in-out infinite;
+  }
+
+  .hero-card-float-1 {
+    top: 100px; right: -20px;
+    animation-delay: -2s;
+  }
+
+  .hero-card-float-2 {
+    bottom: 100px; left: -20px;
+    animation-delay: -4s;
+  }
+
+  @keyframes floatCard2 {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+
+  .float-icon {
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+  }
+
+  .float-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--text-mid);
+    white-space: nowrap;
+  }
+
+  .float-val {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--navy);
+  }
+
+  /* SECTION COMMON */
+  section { padding: 100px 5%; }
+
+  .section-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--teal-dark);
+    margin-bottom: 14px;
+    padding: 5px 14px;
+    background: rgba(42,188,170,0.1);
+    border-radius: 50px;
+    border: 1px solid rgba(42,188,170,0.2);
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+
+  .section-desc {
+    font-size: 1rem;
+    color: var(--text-mid);
+    line-height: 1.75;
+    font-weight: 300;
+    max-width: 580px;
+  }
+
+  /* VISION / MISSION / VALUES */
+  .vmv {
+    background: var(--navy);
+    color: white;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .vmv::before {
+    content: '';
+    position: absolute;
+    top: -200px; right: -100px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(42,188,170,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .vmv::after {
+    content: '';
+    position: absolute;
+    bottom: -200px; left: -100px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(91,63,166,0.2) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .vmv-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 40px;
+    position: relative;
+    z-index: 2;
+  }
+
+  .vmv-card {
+    padding: 40px 36px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s, background 0.3s;
+  }
+
+  .vmv-card:hover {
+    transform: translateY(-6px);
+    background: rgba(255,255,255,0.09);
+  }
+
+  .vmv-icon {
+    width: 52px; height: 52px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+  }
+
+  .vmv-card-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--teal-light);
+    margin-bottom: 12px;
+  }
+
+  .vmv-card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 16px;
+  }
+
+  .vmv-card-text {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .values-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 4px;
+  }
+
+  .values-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.8);
+    font-weight: 400;
+  }
+
+  .values-list li::before {
+    content: '';
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: var(--teal);
+    flex-shrink: 0;
+  }
+
+  /* SERVICES */
+  .services { background: var(--cream); }
+
+  .services-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: end;
+    margin-bottom: 64px;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .service-card {
+    background: white;
+    border-radius: 20px;
+    padding: 32px 28px;
+    box-shadow: 0 2px 16px rgba(30,27,75,0.06);
+    border: 1px solid rgba(30,27,75,0.05);
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--teal), var(--purple));
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .service-card:hover::before { opacity: 1; }
+
+  .service-icon {
+    width: 48px; height: 48px;
+    border-radius: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 18px;
+    transition: transform 0.3s;
+  }
+
+  .service-card:hover .service-icon { transform: scale(1.1); }
+
+  .service-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 10px;
+  }
+
+  .service-desc {
+    font-size: 0.85rem;
+    color: var(--text-mid);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  /* FOUNDERS */
+  .founders { background: white; }
+
+  .founders-intro {
+    text-align: center;
+    max-width: 680px;
+    margin: 0 auto 72px;
+  }
+
+  .founders-intro .section-desc { margin: 0 auto; }
+
+  .founders-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    max-width: 900px;
+    margin: 0 auto 64px;
+  }
+
+  .founder-card {
+    background: var(--cream);
+    border-radius: 24px;
+    padding: 44px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+
+  .founder-card:hover { transform: translateY(-6px); }
+
+  .founder-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--teal), var(--purple));
+  }
+
+  .founder-avatar {
+    width: 88px; height: 88px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    position: relative;
+  }
+
+  .founder-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+
+  .founder-role {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--teal-dark);
+    margin-bottom: 20px;
+  }
+
+  .founder-bio {
+    font-size: 0.88rem;
+    color: var(--text-mid);
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .founder-contact {
+    margin-top: 20px;
+    font-size: 0.85rem;
+    color: var(--purple);
+    font-weight: 500;
+  }
+
+  .founders-story {
+    background: linear-gradient(135deg, rgba(42,188,170,0.08), rgba(91,63,166,0.08));
+    border-radius: 24px;
+    padding: 56px 60px;
+    max-width: 860px;
+    margin: 0 auto;
+    border: 1px solid rgba(42,188,170,0.15);
+    position: relative;
+  }
+
+  .story-quote-mark {
+    font-family: 'Playfair Display', serif;
+    font-size: 8rem;
+    color: var(--teal);
+    opacity: 0.2;
+    line-height: 0.8;
+    position: absolute;
+    top: 24px;
+    left: 36px;
+  }
+
+  .founders-story-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    color: var(--navy);
+    line-height: 1.8;
+    font-weight: 400;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* NDIS STRIP */
+  .ndis-strip {
+    background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+    color: white;
+    padding: 60px 5%;
+    text-align: center;
+  }
+
+  .ndis-strip h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+  }
+
+  .ndis-strip p {
+    font-size: 1rem;
+    opacity: 0.88;
+    font-weight: 300;
+    max-width: 560px;
+    margin: 0 auto 28px;
+    line-height: 1.7;
+  }
+
+  .btn-white {
+    background: white;
+    color: var(--teal-dark);
+    padding: 14px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.25s;
+    display: inline-block;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  }
+
+  .btn-white:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(0,0,0,0.2);
+  }
+
+  /* CONTACT */
+  .contact { background: var(--cream); }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+  }
+
+  .contact-info-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .contact-card {
+    background: white;
+    border-radius: 18px;
+    padding: 28px 32px;
+    box-shadow: 0 2px 16px rgba(30,27,75,0.06);
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    transition: transform 0.2s;
+  }
+
+  .contact-card:hover { transform: translateY(-3px); }
+
+  .contact-card-icon {
+    width: 48px; height: 48px;
+    border-radius: 13px;
+    background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .contact-card-icon svg { width: 22px; height: 22px; }
+
+  .contact-card-label {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 6px;
+  }
+
+  .contact-card-value {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--navy);
+    line-height: 1.5;
+  }
+
+  .contact-card-value a {
+    color: var(--navy);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .contact-card-value a:hover { color: var(--teal-dark); }
+
+  .directors-contact {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: var(--shadow);
+  }
+
+  .directors-contact h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 28px;
+  }
+
+  .director-row {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 18px 0;
+    border-bottom: 1px solid rgba(30,27,75,0.07);
+  }
+
+  .director-row:last-child { border-bottom: none; }
+
+  .director-avatar-sm {
+    width: 52px; height: 52px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: white;
+    flex-shrink: 0;
+  }
+
+  .director-info-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--navy);
+  }
+
+  .director-info-role {
+    font-size: 0.75rem;
+    color: var(--text-light);
+    margin-bottom: 4px;
+  }
+
+  .director-info-phone {
+    font-size: 0.88rem;
+    color: var(--teal-dark);
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .director-info-phone:hover { text-decoration: underline; }
+
+  /* FOOTER */
+  footer {
+    background: var(--navy);
+    color: rgba(255,255,255,0.7);
+    padding: 60px 5% 36px;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .footer-brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 4px;
+  }
+
+  .footer-brand-sub {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--teal-light);
+    margin-bottom: 16px;
+  }
+
+  .footer-desc {
+    font-size: 0.88rem;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.55);
+    max-width: 300px;
+  }
+
+  .footer-col-title {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--teal-light);
+    margin-bottom: 20px;
+  }
+
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-links a {
+    text-decoration: none;
+    color: rgba(255,255,255,0.6);
+    font-size: 0.88rem;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--teal-light); }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.4);
+  }
+
+  .footer-bottom a {
+    color: var(--teal-light);
+    text-decoration: none;
+  }
+
+  /* ANIMATIONS */
+  .fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 0 5%; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+
+    .hero { grid-template-columns: 1fr; padding-top: 100px; }
+    .hero-visual { display: none; }
+    .hero-content { padding: 40px 0 60px; }
+
+    .vmv-grid { grid-template-columns: 1fr; }
+    .services-header { grid-template-columns: 1fr; gap: 20px; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .founders-grid { grid-template-columns: 1fr; }
+    .founders-story { padding: 40px 32px; }
+    .contact-grid { grid-template-columns: 1fr; }
+    .footer-top { grid-template-columns: 1fr; gap: 32px; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+  }
+
+  @media (max-width: 600px) {
+    section { padding: 70px 5%; }
+    .services-grid { grid-template-columns: 1fr; }
+    .hero-stats { gap: 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <img src="logo.png" alt="Zaymin Logo" style="height:52px;width:auto;">
+    <div class="nav-brand">
+      <span class="nav-brand-name">ZAYMIN</span>
+      <span class="nav-brand-sub">Disability Services</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#founders">Our Story</a></li>
+    <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+  </ul>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg-shape"></div>
+  <div class="hero-bg-shape2"></div>
+  <div class="hero-content fade-up">
+    <div class="hero-tag">NDIS Registered Provider · Adelaide, SA</div>
+    <h1 class="hero-title">
+      Care that puts<br>
+          you at the<br>
+          <em>centre of everything</em>
+    </h1>
+    <p class="hero-desc">
+      At Zaymin, we believe every person deserves support that truly fits their life. We work alongside people with disabilities across Adelaide to build independence, confidence and connection.
+    </p>
+    <div class="hero-actions">
+      <a href="#services" class="btn-primary">Our Services</a>
+      <a href="#contact" class="btn-secondary">Reach Out to Us</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="hero-stat-num">10+</div>
+        <div class="hero-stat-label">Services Offered</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">100%</div>
+        <div class="hero-stat-label">Adelaide Coverage</div>
+      </div>
+      <div>
+        <div class="hero-stat-num">2</div>
+        <div class="hero-stat-label">Founders Who Care</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-card-main fade-up">
+      <div class="hero-card-icon">
+        <svg viewBox="0 0 28 28" fill="none">
+          <path d="M14 3C8.5 3 4 7.5 4 13s4.5 10 10 10 10-4.5 10-10S19.5 3 14 3z" fill="rgba(255,255,255,0.3)"/>
+          <path d="M9 14l3 3 7-7" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="hero-card-title">Person-centred care, always</div>
+      <div class="hero-card-text">Every support plan is built around your unique goals, preferences and needs. No two people are the same, and we never treat them that way.</div>
+      <div class="hero-card-pill">Zaymin Promise</div>
+    </div>
+    <div class="hero-card-float hero-card-float-1">
+      <div class="float-icon" style="background: rgba(42,188,170,0.12);">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M10 2a5 5 0 100 10A5 5 0 0010 2zm0 12c-5 0-8 2-8 3v1h16v-1c0-1-3-3-8-3z" fill="#2ABCAA"/>
+        </svg>
+      </div>
+      <div class="float-label">Community Focus</div>
+      <div class="float-val">Adelaide</div>
+    </div>
+    <div class="hero-card-float hero-card-float-2">
+      <div class="float-icon" style="background: rgba(91,63,166,0.12);">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M10 1l2.4 6.4H19l-5.4 4 2 6.4L10 14l-5.6 3.8 2-6.4L1 7.4h6.6z" fill="#5B3FA6"/>
+        </svg>
+      </div>
+      <div class="float-label">Quality Care</div>
+      <div class="float-val">5 Stars</div>
+    </div>
+  </div>
+</section>
+
+<!-- VISION / MISSION / VALUES -->
+<section class="vmv" id="about">
+  <div class="vmv-grid">
+    <div class="vmv-card fade-up">
+      <div class="vmv-icon" style="background: rgba(42,188,170,0.15);">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+          <circle cx="13" cy="13" r="10" stroke="#2ABCAA" stroke-width="2"/>
+          <circle cx="13" cy="13" r="4" fill="#2ABCAA"/>
+          <path d="M13 3v3M13 20v3M3 13h3M20 13h3" stroke="#2ABCAA" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="vmv-card-label">Our Vision</div>
+      <div class="vmv-card-title">A life of full potential</div>
+      <div class="vmv-card-text">We want every person we support to live the life they choose. Our vision is a world where disability is never a barrier to potential, independence or respect.</div>
+    </div>
+    <div class="vmv-card fade-up">
+      <div class="vmv-icon" style="background: rgba(91,63,166,0.2);">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+          <path d="M13 3C8.03 3 4 7.03 4 12s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9z" stroke="#7B5DC8" stroke-width="2"/>
+          <path d="M9 12l2.5 2.5L17 9" stroke="#7B5DC8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="vmv-card-label">Our Mission</div>
+      <div class="vmv-card-title">Personalised, high-quality support</div>
+      <div class="vmv-card-text">We show up for people. Our mission is to provide personalised, high-quality support that builds wellbeing, independence and genuine community connection for every person we work with.</div>
+    </div>
+    <div class="vmv-card fade-up">
+      <div class="vmv-icon" style="background: rgba(255,255,255,0.1);">
+        <svg width="26" height="26" viewBox="0 0 26 26" fill="none">
+          <path d="M13 3l2.5 5 5.5.8-4 3.9.94 5.5L13 15.5l-4.94 2.7.94-5.5L5 8.8l5.5-.8z" stroke="#4ECDC4" stroke-width="2" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div class="vmv-card-label">Our Values</div>
+      <div class="vmv-card-title">What guides everything we do</div>
+      <ul class="values-list">
+        <li>Respect and Dignity</li>
+        <li>Empowerment</li>
+        <li>Inclusivity</li>
+        <li>Integrity</li>
+        <li>Compassion</li>
+        <li>Excellence</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="services-header">
+    <div>
+      <div class="section-tag">What We Offer</div>
+      <h2 class="section-title">Support services built around your life</h2>
+    </div>
+    <p class="section-desc">Every service we provide is designed to meet you where you are, supporting your goals, your independence and your sense of belonging in the community.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card fade-up">
+      <div class="service-icon" style="background: rgba(42,188,170,0.12);">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2C9.24 2 7 4.24 7 7s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zm0 12c-5.33 0-8 2.67-8 4v2h16v-2c0-1.33-2.67-4-8-4z" fill="#2ABCAA"/>
+        </svg>
+      </div>
+      <div class="service-name">Assist Access</div>
+      <div class="service-desc">We help people find and access the right services, making the whole process less overwhelming and more empowering.</div>
+    </div>
+    <div class="service-card fade-up">
+      <div class="service-icon" style="background: rgba(91,63,166,0.1);">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2a10 10 0 100 20A10 10 0 0012 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z" fill="#5B3FA6"/>
+        </svg>
+      </div>
+      <div class="service-name">Assist – Life Stage</div>
+      <div class="service-desc">Guidance and support through key life transitions, helping participants plan and navigate changes with clarity and confidence.</div>
+    </div>
+    <div class="service-card fade-up">
+      <div class="service-icon" style="background: rgba(42,188,170,0.12);">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" fill="#2ABCAA"/>
+        </svg>
+      </div>
+      <div class="service-name">Assist – Personal Activities</div>
+      <div class="service-desc">Hands-on daily living support with dignity at the core. From personal care to household tasks, always on your terms.</div>
+    </div>
+    <div class="service-card fade-up">
+      <div class="service-icon" style="background: rgba(30,27,75,0.07);">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8a1 1 0 001 1h1a1 1 0 001-1v-1h12v1a1 1 0 001 1h1a1 1 0 001-1v-8l-2.08-5.99zM6.5 16a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm11 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3zM5 11l1.5-4.5h11L19 11H5z" fill="#1E1B4B"/>
+        </svg>
+      </div>
+      <div class="service-name">Assist – Travel & Transport</div>
+      <div class="service-desc">Reliable, safe transport support to help participants get to appointments, activities, and community events across Adelaide.</div>
+    </div>
+    <div class="service-card fade-up">
+      <div class="service-icon" style="background: rgba(42,188,170,0.12);">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 3c1.93 0 3.5 1.57 3.5 3.5S13.93 13 12 13s-3.5-1.57-3.5-3.5S10.07 6 12 6zm7 13H5v-.23c0-.62.28-1.2.76-1.58C7.47 15.82 9.64 15 12 15s4.53.82 6.24 2.19c.48.38.76.97.76 1.58V19z" fill="#2ABCAA"/>
+        </svg>
+      </div>
+      <div class="service-name">Community Nursing Care</div>
+      <div class="service-desc">Skilled nursing support delivered in the community, where people feel most comfortable. Health care that comes to you, with warmth and continuity.</div>
+    </div>
+    <div class="service-card fade-up">
+      <div class="service-icon" style="background: rgba(91,63,166,0.1);">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20a2 2 0 002 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z" fill="#5B3FA6"/>
+        </svg>
+      </div>
+      <div class="service-name">Daily Tasks</div>
+      <div class="service-desc">Support with the everyday tasks that keep life running smoothly, so you can focus on what matters most to you.</div>
+    </div>
+    <div class="service-card fade-up">
+      <div class="service-icon" style="background: rgba(42,188,170,0.12);">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" fill="#2ABCAA"/>
+        </svg>
+      </div>
+      <div class="service-name">Innovative Community Participation</div>
+      <div class="service-desc">We open doors to community life through creative, tailored programs. Real skills, real friendships, real belonging.</div>
+    </div>
+    <div class="service-card fade-up">
+      <div class="service-icon" style="background: rgba(30,27,75,0.07);">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zm-5 9.18V16l5 2.82 5-2.82v-3.82L12 15l-5-2.82z" fill="#1E1B4B"/>
+        </svg>
+      </div>
+      <div class="service-name">Development – Life Skills</div>
+      <div class="service-desc">Building practical life skills that support greater independence. Things like cooking, budgeting, communication and self-care.</div>
+    </div>
+    <div class="service-card fade-up">
+      <div class="service-icon" style="background: rgba(91,63,166,0.1);">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z" fill="#5B3FA6"/>
+        </svg>
+      </div>
+      <div class="service-name">Participate Community</div>
+      <div class="service-desc">Encouraging active participation in social, recreational and civic life. Belonging is a fundamental human need and we help make it real.</div>
+    </div>
+    <div class="service-card fade-up">
+      <div class="service-icon" style="background: rgba(42,188,170,0.12);">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M20 6h-1v8c0 .55-.45 1-1 1H6v1c0 1.1.9 2 2 2h10l4 4V8c0-1.1-.9-2-2-2zm-3 5V4c0-1.1-.9-2-2-2H4C2.9 2 2 2.9 2 4v13l4-4h9c1.1 0 2-.9 2-2z" fill="#2ABCAA"/>
+        </svg>
+      </div>
+      <div class="service-name">Specialised Supported Employment</div>
+      <div class="service-desc">We help people find work that fits and stick with it. The right adjustments, the right support and someone genuinely in your corner.</div>
+    </div>
+    <div class="service-card fade-up" style="grid-column: 2;">
+      <div class="service-icon" style="background: rgba(30,27,75,0.07);">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+          <path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9H9V9h10v2zm-4 4H9v-2h6v2zm4-8H9V5h10v2z" fill="#1E1B4B"/>
+        </svg>
+      </div>
+      <div class="service-name">Group & Centre Activities</div>
+      <div class="service-desc">Group activities and centre programs designed to be genuinely enjoyable. A place to make friends, learn new things and feel part of something.</div>
+    </div>
+  </div>
+</section>
+
+<!-- NDIS STRIP -->
+<div class="ndis-strip">
+  <h2>We are here to help you navigate the NDIS</h2>
+  <p>Not sure what supports you are eligible for? Our team is happy to walk you through your options and help you get the most out of your NDIS plan.</p>
+  <a href="#contact" class="btn-white">Talk to Our Team</a>
+</div>
+
+<!-- FOUNDERS / OUR STORY -->
+<section class="founders" id="founders">
+  <div class="founders-intro fade-up">
+    <div class="section-tag">Our Story</div>
+    <h2 class="section-title">Built from friendship, purpose, and lived experience</h2>
+    <p class="section-desc" style="margin: 0 auto;">Zaymin did not start in a boardroom. It started in a classroom, between two women who saw the gaps in disability support firsthand and decided to do something about it.</p>
+  </div>
+  <div class="founders-grid">
+    <div class="founder-card fade-up">
+      <div class="founder-avatar" style="background: linear-gradient(135deg, #2ABCAA, #1A9688);">PB</div>
+      <div class="founder-name">Pallavi Bawa</div>
+      <div class="founder-role">Co-Founder & Director</div>
+      <p class="founder-bio">Pallavi is an educator in disability support services with deep expertise in Certificate III and IV in Individual Support. She brings the knowledge of how great care is built, structured and sustained.</p>
+      <div class="founder-contact">📞 0494 055 274</div>
+    </div>
+    <div class="founder-card fade-up">
+      <div class="founder-avatar" style="background: linear-gradient(135deg, #5B3FA6, #7B5DC8);">NN</div>
+      <div class="founder-name">Nancy Narula</div>
+      <div class="founder-role">Co-Founder & Director</div>
+      <p class="founder-bio">Nancy worked as a support worker herself, which means she brings something most directors never have: a real feel for what participants actually need day to day. She has been in the room. She knows.</p>
+      <div class="founder-contact">📞 0493 468 553</div>
+    </div>
+  </div>
+  <div class="founders-story fade-up">
+    <div class="story-quote-mark">"</div>
+    <p class="founders-story-text">
+      Pallavi and Nancy met while studying Certificate III in Individual Support. Two women from different professional backgrounds, united by a shared belief that people with disabilities deserve far better than what was available. Through their studies and work in the sector, they saw the same gaps again and again: support that felt transactional, care that lacked consistency, and a system that too often forgot the person at the centre of it all.<br><br>
+      Their answer was Zaymin Disability Services. Not a provider built on paperwork and process, but one grounded in genuine relationships, deep expertise and an unwavering commitment to dignified, person-centred care. Together, they bring something rare to this industry. Pallavi knows how good care is taught and structured. Nancy knows how it feels to deliver it every day. That combination is what makes Zaymin different.
+    </p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-tag">Get in Touch</div>
+  <h2 class="section-title" style="margin-bottom: 52px;">We'd love to hear from you</h2>
+  <div class="contact-grid">
+    <div class="contact-info-cards">
+      <div class="contact-card fade-up">
+        <div class="contact-card-icon">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="white"/>
+          </svg>
+        </div>
+        <div>
+          <div class="contact-card-label">Email Us</div>
+          <div class="contact-card-value"><a href="mailto:admin@zaymincare.com.au">admin@zaymincare.com.au</a></div>
+        </div>
+      </div>
+      <div class="contact-card fade-up">
+        <div class="contact-card-icon" style="background: linear-gradient(135deg, #5B3FA6, #7B5DC8);">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="white"/>
+          </svg>
+        </div>
+        <div>
+          <div class="contact-card-label">Visit Us</div>
+          <div class="contact-card-value">13 Lorentz Ct, Mawson Lakes SA 5095</div>
+        </div>
+      </div>
+      <div class="contact-card fade-up">
+        <div class="contact-card-icon" style="background: linear-gradient(135deg, #1E1B4B, #2D2A6E);">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" fill="white"/>
+          </svg>
+        </div>
+        <div>
+          <div class="contact-card-label">Website</div>
+          <div class="contact-card-value"><a href="https://www.zaymincare.com.au" target="_blank">www.zaymincare.com.au</a></div>
+        </div>
+      </div>
+      <div class="contact-card fade-up">
+        <div class="contact-card-icon" style="background: linear-gradient(135deg, #2ABCAA, #4ECDC4);">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="white"/>
+          </svg>
+        </div>
+        <div>
+          <div class="contact-card-label">Service Area</div>
+          <div class="contact-card-value">Greater Adelaide, South Australia</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="directors-contact fade-up">
+      <h3>Speak Directly to Our Directors</h3>
+      <div class="director-row">
+        <div class="director-avatar-sm" style="background: linear-gradient(135deg, #2ABCAA, #1A9688);">PB</div>
+        <div>
+          <div class="director-info-role">Co-Founder & Director</div>
+          <div class="director-info-name">Pallavi Bawa</div>
+          <a href="tel:0494055274" class="director-info-phone">0494 055 274</a>
+        </div>
+      </div>
+      <div class="director-row">
+        <div class="director-avatar-sm" style="background: linear-gradient(135deg, #5B3FA6, #7B5DC8);">NN</div>
+        <div>
+          <div class="director-info-role">Co-Founder & Director</div>
+          <div class="director-info-name">Nancy Narula</div>
+          <a href="tel:0493468553" class="director-info-phone">0493 468 553</a>
+        </div>
+      </div>
+      <div style="margin-top: 28px; padding: 20px; background: rgba(42,188,170,0.07); border-radius: 14px; border: 1px solid rgba(42,188,170,0.18);">
+        <div style="font-size: 0.82rem; color: var(--text-mid); line-height: 1.6; font-weight: 300;">
+          <strong style="color: var(--navy); font-weight: 600;">Ready to talk?</strong><br>
+          Give us a call or send us an email. We love a good conversation and we are always happy to answer questions and explore how we can help.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:10px;">
+        <img src="logo.png" alt="Zaymin Logo" style="height:52px;width:auto;">
+        <div>
+          <div class="footer-brand-name">ZAYMIN</div>
+          <div class="footer-brand-sub">Disability Services Pty Ltd</div>
+        </div>
+      </div>
+      <p class="footer-desc">Providing personalised, compassionate disability support services across Greater Adelaide, South Australia.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Navigate</div>
+      <ul class="footer-links">
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Our Services</a></li>
+        <li><a href="#founders">Our Story</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <ul class="footer-links">
+        <li><a href="mailto:admin@zaymincare.com.au">admin@zaymincare.com.au</a></li>
+        <li><a href="tel:0494055274">0494 055 274</a></li>
+        <li><a href="tel:0493468553">0493 468 553</a></li>
+        <li><a href="https://www.zaymincare.com.au">www.zaymincare.com.au</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Zaymin Disability Services Pty Ltd · ABN · All rights reserved</span>
+    <span>13 Lorentz Ct, Mawson Lakes SA 5095</span>
+  </div>
+</footer>
+
+<script>
+  // Scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, entry.target.dataset.delay || 0);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.fade-up').forEach((el, i) => {
+    el.dataset.delay = (i % 3) * 100;
+    observer.observe(el);
+  });
+
+  // Navbar scroll effect
+  window.addEventListener('scroll', () => {
+    const nav = document.getElementById('navbar');
+    if (window.scrollY > 40) {
+      nav.style.boxShadow = '0 4px 24px rgba(30,27,75,0.12)';
+    } else {
+      nav.style.boxShadow = '0 2px 20px rgba(30,27,75,0.07)';
+    }
+  });
+
+  // Mobile menu
+  function toggleMenu() {
+    const links = document.querySelector('.nav-links');
+    if (links.style.display === 'flex') {
+      links.style.display = 'none';
+    } else {
+      links.style.cssText = 'display:flex; flex-direction:column; position:absolute; top:72px; left:0; right:0; background:white; padding:20px 5%; box-shadow:0 8px 32px rgba(30,27,75,0.12); gap:16px; z-index:99;';
+    }
+  }
+
+  // Close menu on link click
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      const links = document.querySelector('.nav-links');
+      links.style.display = 'none';
+    });
+  });
+</script>
+</body>
+</html>
