@@ -1116,6 +1116,33 @@
     .services-grid { grid-template-columns: 1fr; }
     .hero-stats { gap: 24px; }
   }
+
+  /* MOBILE SERVICES FIX */
+  @media (max-width: 900px) {
+    .services-grid {
+      grid-template-columns: 1fr !important;
+      gap: 22px;
+    }
+
+    .service-card {
+      grid-column: auto !important;
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .services {
+      padding-left: 6%;
+      padding-right: 6%;
+    }
+
+    .service-card {
+      padding: 30px 26px;
+      border-radius: 22px;
+    }
+  }
+
 </style>
 </head>
 <body>
@@ -1132,6 +1159,7 @@
       <li><a href="#founders">Our Story</a></li>
       <li><a href="#contact" class="nav-cta">Contact Us</a></li>
     </ul>
+    <a href="tel:0412492112" class="nav-phone">0412 492 112</a>
   </div>
   <div class="hamburger" onclick="toggleMenu()">
     <span></span><span></span><span></span>
@@ -1514,7 +1542,7 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2025 Zaymin Disability Services Pty Ltd · ABN 50 673 371 269 · All rights reserved</span>
+    <span>© 2025 Zaymin Disability Services Pty Ltd · ABN · All rights reserved</span>
     <span>13 Lorentz Ct, Mawson Lakes SA 5095</span>
   </div>
 </footer>
