@@ -8,6 +8,9 @@
 <style>
   :root {
     --teal: #2ABCAA;
+    --primary: #5B3FA6;
+    --primary-dark: #4A328C;
+    --accent: #2ABCAA;
     --teal-light: #4ECDC4;
     --teal-dark: #1A9688;
     --purple: #5B3FA6;
@@ -982,22 +985,115 @@
     transform: translateY(0);
   }
 
+
+  /* BRAND REFINEMENT */
+  .nav-logo img {
+    height: 62px !important;
+    width: auto;
+    display: block;
+  }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+
+  .nav-phone {
+    color: var(--purple);
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 9px 16px;
+    border-radius: 50px;
+    background: rgba(91,63,166,0.08);
+    border: 1px solid rgba(91,63,166,0.14);
+    white-space: nowrap;
+    transition: all 0.2s ease;
+  }
+
+  .nav-phone:hover {
+    background: rgba(91,63,166,0.14);
+    transform: translateY(-1px);
+  }
+
+  nav {
+    height: 84px;
+    border-bottom: 1px solid rgba(91,63,166,0.13);
+    box-shadow: 0 3px 22px rgba(30,27,75,0.08);
+  }
+
+  .nav-cta {
+    background: var(--purple);
+    box-shadow: 0 6px 18px rgba(91,63,166,0.22);
+  }
+
+  .nav-cta:hover {
+    background: var(--navy) !important;
+  }
+
+  .btn-primary {
+    background: var(--purple);
+    box-shadow: 0 6px 24px rgba(91,63,166,0.30);
+  }
+
+  .btn-primary:hover {
+    background: var(--navy);
+    box-shadow: 0 10px 32px rgba(91,63,166,0.34);
+  }
+
+  .hero {
+    padding-top: 84px;
+    background: linear-gradient(135deg, #f6f4ff 0%, #f9f7f4 48%, #eefbf9 100%);
+  }
+
+  .hero-title em {
+    color: var(--purple);
+  }
+
+  .hero-tag {
+    color: var(--purple);
+    background: rgba(91,63,166,0.08);
+    border: 1px solid rgba(91,63,166,0.18);
+  }
+
+  .hero-tag::before {
+    background: var(--teal);
+  }
+
+  .ndis-strip {
+    background: linear-gradient(135deg, var(--purple), var(--navy));
+  }
+
+  .btn-white {
+    color: var(--purple);
+  }
+
+  @media (max-width: 1100px) {
+    .nav-phone {
+      display: none;
+    }
+  }
+
+
   /* RESPONSIVE */
   @media (max-width: 900px) {
-    nav { padding: 0 5%; }
+    nav { padding: 0 5%; height: 84px; }
+    .nav-actions { display: block; }
     .nav-links { display: none; }
     .nav-links.active {
       display: flex;
       flex-direction: column;
       position: absolute;
-      top: 72px;
+      top: 84px;
       left: 0;
       right: 0;
       background: white;
-      padding: 20px 5%;
+      padding: 22px 5%;
       box-shadow: 0 8px 32px rgba(30,27,75,0.12);
-      gap: 16px;
+      gap: 18px;
       z-index: 99;
+      align-items: flex-start;
     }
     .hamburger { display: flex; }
 
@@ -1029,12 +1125,15 @@
   <a href="#" class="nav-logo">
     <img src="logo.png" alt="Zaymin Logo" style="height:52px;width:auto;">
   </a>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#founders">Our Story</a></li>
-    <li><a href="#contact" class="nav-cta">Contact Us</a></li>
-  </ul>
+  <div class="nav-actions">
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#founders">Our Story</a></li>
+      <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+    </ul>
+    <a href="tel:0412492112" class="nav-phone">0412 492 112</a>
+  </div>
   <div class="hamburger" onclick="toggleMenu()">
     <span></span><span></span><span></span>
   </div>
@@ -1453,13 +1552,20 @@
     document.querySelector('.nav-links').classList.toggle('active');
   }
 
-  // Close mobile menu on link click without hiding desktop nav
+  // Close menu on link click only on mobile
   document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
-      if (window.innerWidth < 900) {
+      if (window.innerWidth <= 900) {
         document.querySelector('.nav-links').classList.remove('active');
       }
     });
+  });
+
+  // Reset mobile menu state when returning to desktop
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900) {
+      document.querySelector('.nav-links').classList.remove('active');
+    }
   });
 </script>
 </body>
